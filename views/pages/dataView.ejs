@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partial/head'); %>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body class="container">
+<header>
+  <%- include('../partial/headerAdmin'); %>
+</header>
+
+<main>
+    <% if(data!=null) { %>
+        <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+        <% data.forEach(function(item){ %>
+        <tr>
+            <td><%= item.title%></td>
+            <td><%= item.description%></td>
+        </tr>
+        <% }) %>
+        </table>
+    <% } %>
+</main>
+
+<footer>
+  <%- include('../partial/footer'); %>
+</footer>
+
+</body>
+</html>
